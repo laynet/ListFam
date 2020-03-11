@@ -9,10 +9,21 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       description: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       purchased: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
+      },
+
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       },
       listId: {
         type: Sequelize.INTEGER,
@@ -22,14 +33,6 @@ module.exports = {
           key: "id",
           as: "listId"
         }
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
       }
     });
   },
