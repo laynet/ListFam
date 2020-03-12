@@ -67,4 +67,7 @@ describe("routes : lists", () => {
       });
     });
   });
+  describe("GET /lists/:id/edit", () => {
+    it("should render a view with an edit list form");
+  });
 });
