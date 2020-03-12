@@ -25,5 +25,14 @@ module.exports = {
         res.redirect(303, `/lists/${list.id}`);
       }
     });
+  },
+  show(req, res, next) {
+    listQueries.getList(req.params.id, (err, list) => {
+      if (err || list == null) {
+        res.redirect(404, "/");
+      } else {
+        res.render("lists/show", { list });
+      }
+    });
   }
 };

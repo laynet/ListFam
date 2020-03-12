@@ -21,6 +21,7 @@ describe("routes : lists", () => {
       request.get(base, (err, res, body) => {
         expect(res.statusCode).toBe(200);
         expect(err).toBeNull();
+        expect(body).toContain("Lists");
         expect(body).toContain("My first list");
         done();
       });
@@ -28,7 +29,7 @@ describe("routes : lists", () => {
   });
   describe("GET /lists/new", () => {
     it("should render a new list form", done => {
-      request.get(`${base}new`, (err, res, body) => {
+      request.get(`${base}/new`, (err, res, body) => {
         expect(err).toBeNull();
         expect(body).toContain("New List");
         done();
@@ -37,7 +38,7 @@ describe("routes : lists", () => {
   });
   describe("POST /lists/create", () => {
     const options = {
-      url: `${base}create`,
+      url: `${base}/create`,
       form: {
         title: "my first grocery list"
       }
@@ -54,6 +55,15 @@ describe("routes : lists", () => {
             console.log(err);
             done();
           });
+      });
+    });
+  });
+  describe("GET /lists/:id", () => {
+    it("should render a view with the selected list", done => {
+      request.get(`${base}/${this.list.id}`, (err, res, body) => {
+        expect(err).toBeNull();
+        expect(body).toContain("my first grocery list");
+        done();
       });
     });
   });

@@ -3,10 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   var List = sequelize.define(
     "List",
     {
-      title: DataTypes.STRING,
-      id: DataTypes.INTEGER
+      title: DataTypes.STRING
     },
-
     {}
   );
   List.associate = function(models) {
