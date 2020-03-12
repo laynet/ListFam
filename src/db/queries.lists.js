@@ -1,4 +1,4 @@
-const List = require("./models").List;
+const { List } = require("./models/index");
 
 module.exports = {
   getAllLists(callback) {

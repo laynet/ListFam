@@ -4,8 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     "List",
     {
       title: DataTypes.STRING,
-      allowNull: false
+      id: DataTypes.INTEGER
     },
+
     {}
   );
   List.associate = function(models) {
