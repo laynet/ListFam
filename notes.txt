@@ -1,10 +1,15 @@
 !!!!!!!! LEFT OFFF !!!!!!!!!!!!!!!
 
-problem is 100% in queries
-
-problem is in the migration
-
-
+<form action="/lists/new" method="post">
+        <div>
+          <input
+            type="text"
+            aria-describedby="itemHelp"
+            placeholder="Add Item"
+          />
+          <button type="submit" class="btn btn-primary">Add Item</button>
+        </div>
+      </form>
 
 ********* POSTGRES INSTRUCTIONS  ****************
 db names - listfam-dev and listfam-test
