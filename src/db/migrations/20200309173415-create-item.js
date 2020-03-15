@@ -3,31 +3,32 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable("Items", {
       id: {
-        allowNull: false,
+        // allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
       description: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.STRING
       },
       purchased: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.BOOLEAN
       },
 
       createdAt: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.DATE
       },
       listId: {
         type: Sequelize.INTEGER,
         onDelete: "CASCADE",
+        // allowNull: false,
         references: {
           model: "Lists",
           key: "id",

@@ -3,7 +3,9 @@ const List = require("./models").List;
 
 module.exports = {
   addItem(newItem, callback) {
-    return Item.create(newItem)
+    return Item.create({
+      description: newItem.description
+    })
       .then(item => {
         callback(null, item);
       })

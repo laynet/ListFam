@@ -4,16 +4,13 @@ module.exports = (sequelize, DataTypes) => {
     "Item",
     {
       description: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING
       },
       purchased: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false
+        type: DataTypes.BOOLEAN
       },
       listId: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.INTEGER
       }
     },
     {}

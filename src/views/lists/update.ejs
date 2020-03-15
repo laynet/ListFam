@@ -9,12 +9,22 @@
     <main class="container">
       <h1><%= list.title %></h1>
 
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1"
-          >item.description</label
-        >
-        <h4>add a button to add the item</h4>
+     
+        <form action="/lists/new" method="post">
+          <div>
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <input
+              type="text"
+              aria-describedby="itemHelp"
+              placeholder="Add Item"
+            />
+            <button type="submit" class="btn btn-primary">Add Item</button>
+          </div>
+        </form>
       </div>
     </main>
 
