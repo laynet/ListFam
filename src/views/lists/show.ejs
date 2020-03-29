@@ -11,24 +11,28 @@
 
      
       <ul class="item-group">
-        <!-- #1 -->
         <% list.items.forEach((item) => { %>
-        <!-- #2 -->
         <li class="item-group-item">
-          <a href="/lists/<%= list.id %>"> <%= item.title %> </a>
+          <form action="/lists/<%= list.id %>/items/<%= item.id %>" method="post">
+            <input
+              type="checkbox"
+              checked="<% if(item.purchased){ %>checked<% } %>"
+              class="form-check-input"
+              id="item_checkbox_<%= item.id %>"
+              name="purchased"
+              onChange="this.form.submit()"
+            />
+          </form>
+          <a > <%= item.title %> </a>
         </li>
 
         <% }) %>
       </ul>
 
 
-        <form action="/lists/<%= list.id %>" method="post">
+        <form action="/lists/<%= list.id %>/items" method="post">
           <div>
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="exampleCheck1"
-            />
+           
             <input
               type="text"
               name="title"

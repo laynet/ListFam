@@ -10,5 +10,14 @@ module.exports = {
       .catch(err => {
         callback(err);
       });
+  },
+  updateItem(itemId, fieldsToUpdate, callback) {
+    return Item.update(fieldsToUpdate, { where: { id: itemId } })
+      .then(item => {
+        callback(null, item);
+      })
+      .catch(err => {
+        callback(err);
+      });
   }
 };

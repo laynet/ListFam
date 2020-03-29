@@ -29,7 +29,6 @@ module.exports = {
   },
   show(req, res, next) {
     listQueries.getList(req.params.id, (err, list) => {
-      console.log("LIST ME", list, err);
       if (err || list == null) {
         res.redirect(404, "/");
       } else {
