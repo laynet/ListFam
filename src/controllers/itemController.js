@@ -24,7 +24,6 @@ module.exports = {
       purchased: req.body.purchased === "on"
     };
     itemQueries.updateItem(itemId, fieldsToUpdate, (err, item) => {
-      console.log("UPDATE item: ", fieldsToUpdate, item, err);
       if (err) {
         res.redirect(500, "/lists");
         console.log("ERROR ", err);

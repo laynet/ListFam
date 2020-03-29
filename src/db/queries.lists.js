@@ -13,6 +13,7 @@ module.exports = {
   },
   getList(id, callback) {
     return List.findByPk(id, {
+      order: [[{ model: Item, as: "items" }, "createdAt", "DESC"]],
       include: [
         {
           model: Item,
