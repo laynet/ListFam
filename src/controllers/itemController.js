@@ -19,11 +19,11 @@ module.exports = {
   },
   update(req, res, next) {
     const { listId, itemId } = req.params;
+
     let fieldsToUpdate = {
-      purchased: true // TODO: checked or unchecked?
+      purchased: req.body.purchased === "on"
     };
     itemQueries.updateItem(itemId, fieldsToUpdate, (err, item) => {
-      // TODO: Create 'updateItem'
       console.log("UPDATE item: ", fieldsToUpdate, item, err);
       if (err) {
         res.redirect(500, "/lists");
