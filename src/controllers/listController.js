@@ -19,6 +19,7 @@ module.exports = {
       title: req.body.title
     };
     listQueries.addList(newList, (err, list) => {
+      console.log("CREATE list, NEW list", newList, list);
       if (err) {
         res.redirect(500, "/lists/new");
       } else {

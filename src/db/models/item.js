@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   var Item = sequelize.define(
     "Item",
     {
-      description: {
+      title: {
         type: DataTypes.STRING
       },
       purchased: {

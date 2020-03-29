@@ -10,7 +10,7 @@
       <h1><%= list.title %></h1>
 
      
-        <form action="/lists/new" method="post">
+        <form action="/lists/<%= list.id %>" method="post">
           <div>
             <input
               type="checkbox"
