@@ -1,4 +1,5 @@
-const { List } = require("./models/index");
+const { List, Item } = require("./models/index");
+// const Item = require("./models/item");
 
 module.exports = {
   getAllLists(callback) {
@@ -11,7 +12,14 @@ module.exports = {
       });
   },
   getList(id, callback) {
-    return List.findByPk(id)
+    return List.findByPk(id, {
+      include: [
+        {
+          model: Item,
+          as: "items"
+        }
+      ]
+    })
       .then(list => {
         callback(null, list);
       })

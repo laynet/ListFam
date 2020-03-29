@@ -19,7 +19,7 @@ module.exports = {
       title: req.body.title
     };
     listQueries.addList(newList, (err, list) => {
-      console.log("CREATE list, NEW list", newList, list, err);
+      // console.log("CREATE list, NEW list", newList, list, err);
       if (err) {
         res.redirect(500, "/lists/new");
       } else {
@@ -27,12 +27,13 @@ module.exports = {
       }
     });
   },
-  update(req, res, next) {
+  show(req, res, next) {
     listQueries.getList(req.params.id, (err, list) => {
+      console.log("LIST ME", list, err);
       if (err || list == null) {
         res.redirect(404, "/");
       } else {
-        res.render("lists/update", { list });
+        res.render("lists/show", { list });
       }
     });
   }
