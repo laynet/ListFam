@@ -26,12 +26,12 @@ module.exports = {
       }
     });
   },
-  update(req, res, next) {
+  show(req, res, next) {
     listQueries.getList(req.params.id, (err, list) => {
       if (err || list == null) {
         res.redirect(404, "/");
       } else {
-        res.render("lists/update", { list });
+        res.render("lists/show", { list });
       }
     });
   }

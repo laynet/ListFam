@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+
+  <body>
+    <% include ../static/partials/navbar.ejs %>
+    <main class="container">
+      <h1><%= list.title %></h1>
+
+     
+      <ul class="item-group">
+        <% list.items.forEach((item) => { %>
+        <li class="item-group-item">
+          <form action="/lists/<%= list.id %>/items/<%= item.id %>" method="post">
+            <input
+              type="checkbox"
+              <% if(item.purchased){ %>checked<% } %>
+              class="form-check-input"
+              id="item_checkbox_<%= item.id %>"
+              name="purchased"
+              onChange="this.form.submit()"
+            />
+          </form>
+          <a > <%= item.title %> </a>
+        </li>
+
+        <% }) %>
+      </ul>
+
+
+        <form action="/lists/<%= list.id %>/items" method="post">
+          <div>
+           
+            <input
+              type="text"
+              name="title"
+              aria-describedby="itemHelp"
+              placeholder="Add Item"
+            />
+            <button type="submit" class="btn btn-primary">Add Item</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <% include ../static/partials/baseScripts.ejs %>
+  </body>
+</html>

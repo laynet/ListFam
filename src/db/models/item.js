@@ -3,17 +3,14 @@ module.exports = (sequelize, DataTypes) => {
   var Item = sequelize.define(
     "Item",
     {
-      description: {
-        type: DataTypes.STRING,
-        allowNull: false
+      title: {
+        type: DataTypes.STRING
       },
       purchased: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false
+        type: DataTypes.BOOLEAN
       },
       listId: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.INTEGER
       }
     },
     {}
