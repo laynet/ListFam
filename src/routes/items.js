@@ -5,5 +5,6 @@ const itemController = require("../controllers/itemController");
 
 router.post("/lists/:listId/items", itemController.create);
 router.post("/lists/:listId/items/:itemId", itemController.update);
+router.post("/lists/:listId/items/:itemId/destroy", itemController.destroy);
 
 module.exports = router;

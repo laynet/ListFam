@@ -26,7 +26,17 @@ module.exports = {
     itemQueries.updateItem(itemId, fieldsToUpdate, (err, item) => {
       if (err) {
         res.redirect(500, "/lists");
-        console.log("ERROR ", err);
+      } else {
+        res.redirect(303, `/lists/${listId}`);
+      }
+    });
+  },
+  destroy(req, res, next) {
+    const { listId, itemId } = req.params;
+    itemQueries.deleteItem(itemId, (err, deletedRecordsCount) => {
+      if (err) {
+        console.log("DELETE ITEM ERROR ", err);
+        res.redirect(500, "/lists");
       } else {
         res.redirect(303, `/lists/${listId}`);
       }

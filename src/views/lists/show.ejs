@@ -24,6 +24,21 @@
             />
           </form>
           <a > <%= item.title %> </a>
+
+          <button type="button" class="btn btn-primary btn-sm">Edit</button>
+          <form
+    style="display:initial"
+    action="/lists/<%= list.id %>/items/<%= item.id %>/destroy" method="post"
+   
+  >
+    <button type="submit" class="btn btn btn-sm btn-outline-danger">
+      Delete
+    </button>
+
+    
+          
+        
+         
         </li>
 
         <% }) %>
