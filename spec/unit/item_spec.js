@@ -13,7 +13,7 @@ describe("Item", () => {
         .then(list => {
           this.list = list;
           Item.create({
-            description: "cash rules everything around me",
+            title: "cash rules everything around me",
             listId: this.list.id
           }).then(item => {
             this.item = item;
@@ -29,11 +29,11 @@ describe("Item", () => {
   describe("#create()", () => {
     it("should create an item object with a description and assigned list", done => {
       Item.create({
-        description: "da mystery of chessboxin",
+        title: "da mystery of chessboxin",
         listId: this.list.id
       })
         .then(item => {
-          expect(item.description).toBe("da mystery of chessboxin");
+          expect(item.title).toBe("da mystery of chessboxin");
           done();
         })
         .catch(err => {

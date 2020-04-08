@@ -31,5 +31,4 @@ describe("routes : items", () => {
       });
     });
   });
-  describe("GET /lists/:listId/new");
 });
