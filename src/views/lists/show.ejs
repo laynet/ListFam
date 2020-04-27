@@ -13,7 +13,7 @@
       <ul class="item-group">
         <% list.items.forEach((item) => { %>
         <li class="item-group-item">
-          <form action="/lists/<%= list.id %>/items/<%= item.id %>" method="post">
+          <form action="/lists/<%= list.id %>/items/<%= item.id %>/update" method="post">
             <input
               type="checkbox"
               <% if(item.purchased){ %>checked<% } %>
@@ -22,25 +22,33 @@
               name="purchased"
               onChange="this.form.submit()"
             />
+            <% if(locals.itemId == item.id) { %>  
+              <input
+                type="text"
+                value="<%= item.title %>"
+                name="title"
+              />
+              <button type="submit" class="btn btn-primary btn-sm">Confirm</button>
+            <% } else { %> 
+              <a > <%= item.title %> </a>
+                
+            <% } %>
           </form>
-          <a > <%= item.title %> </a>
-
-          <button type="button" class="btn btn-primary btn-sm">Edit</button>
+          <% if(!locals.isEditMode) { %>
+          <form action="/lists/<%= list.id %>/items/<%= item.id %>/edit" method="get">
+            <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+          </form>
+          <% } %>
           <form
-    style="display:initial"
-    action="/lists/<%= list.id %>/items/<%= item.id %>/destroy" method="post"
-   
-  >
-    <button type="submit" class="btn btn btn-sm btn-outline-danger">
-      Delete
-    </button>
-
-    
-          
-        
-         
+            style="display:initial"
+            action="/lists/<%= list.id %>/items/<%= item.id %>/destroy" 
+            method="post"
+          >
+            <button type="submit" class="btn btn btn-sm btn-outline-danger">
+              Delete
+            </button>
+          </form>
         </li>
-
         <% }) %>
       </ul>
 
