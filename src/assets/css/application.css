@@ -1,3 +1,9 @@
 body {
   padding-top: 54px;
 }
+.hidden {
+  display: none;
+}
+form {
+  display: inline;
+}

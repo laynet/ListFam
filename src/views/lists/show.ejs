@@ -28,17 +28,22 @@
                 value="<%= item.title %>"
                 name="title"
               />
+
               <button type="submit" class="btn btn-primary btn-sm">Confirm</button>
             <% } else { %> 
               <a > <%= item.title %> </a>
                 
             <% } %>
           </form>
-          <% if(!locals.isEditMode) { %>
           <form action="/lists/<%= list.id %>/items/<%= item.id %>/edit" method="get">
-            <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+            <button
+              type="submit"
+              class="btn btn-primary btn-sm <%= locals.itemId == item.id ? 'hidden' : '' %>"
+              <%= locals.isEditMode ? 'disabled' : '' %>
+            >
+              Edit
+            </button>
           </form>
-          <% } %>
           <form
             style="display:initial"
             action="/lists/<%= list.id %>/items/<%= item.id %>/destroy" 
