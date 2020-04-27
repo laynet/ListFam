@@ -23,7 +23,6 @@
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "logging": true,
     "use_env_variable": "DATABASE_URL",
     "db": "process.env.postgres://odzuoxeoclvzoy:46a10818b674a9f22a0d7249cabe74330faafea6033e3592c80ae68ec6a96574@ec2-52-200-119-0.compute-1.amazonaws.com:5432/deh1822calrlc2"
   }
