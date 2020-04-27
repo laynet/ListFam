@@ -1,42 +1,42 @@
-const { List, Item } = require("./models/index");
+const { List, Item } = require('./models/index');
 // const Item = require("./models/item");
 
 module.exports = {
   getAllLists(callback) {
     return List.findAll()
-      .then(lists => {
+      .then((lists) => {
         callback(null, lists);
       })
-      .catch(err => {
+      .catch((err) => {
         callback(err);
       });
   },
   getList(id, callback) {
     return List.findByPk(id, {
-      order: [[{ model: Item, as: "items" }, "createdAt", "DESC"]],
+      order: [[{ model: Item, as: 'items' }, 'createdAt', 'DESC']],
       include: [
         {
           model: Item,
-          as: "items"
-        }
-      ]
+          as: 'items',
+        },
+      ],
     })
-      .then(list => {
+      .then((list) => {
         callback(null, list);
       })
-      .catch(err => {
+      .catch((err) => {
         callback(err);
       });
   },
   addList(newList, callback) {
     return List.create({
-      title: newList.title
+      title: newList.title,
     })
-      .then(list => {
+      .then((list) => {
         callback(null, list);
       })
-      .catch(err => {
+      .catch((err) => {
         callback(err);
       });
-  }
+  },
 };
