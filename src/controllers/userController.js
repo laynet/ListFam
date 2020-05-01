@@ -28,7 +28,7 @@ module.exports = {
     res.render('users/sign_in');
   },
   signIn(req, res, next) {
-    passport.authenticate('local')(req, res, function () {
+    passport.authenticate('local')(req, res, () => {
       if (!req.user) {
         req.flash('notice', 'Sign in failes. Please try again');
         res.redirect('/users/sign_in');
@@ -37,5 +37,10 @@ module.exports = {
         res.redirect('/');
       }
     });
+  },
+  signOut(req, res, next) {
+    req.logout();
+    req.flash('notice', "You've successfully signed out!");
+    res.redirect('/');
   },
 };
