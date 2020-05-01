@@ -39,8 +39,8 @@ Postgresql - For database management
 
 Jasmine - TDD(test driven development) is not complete for the app, but I would like to finish it if given more time
 
-There is no front end framework for this app but if I were to re-build this app using React instead of ejs and html forms
+EJS - If I were to re-build this app I would use React instead of ejs and html forms
 
-The app is deployed in heroku, but there are some issues withe postgres and the database has not been deployed successfully, but runs locally. The app was deploying to heroku and loading the static pages before I added users. Now heroku is saying that there is an internal server error but the logs don't show errors. I've been trying to resolve the issue, but it's a bit over my head for the time I have. The app runs fine locally.
+The app is deployed in heroku, but there are some issues with postgres and the database has not been deployed successfully, but runs locally. The app was deploying to heroku and loading the static pages before I added users. Now heroku is saying that there is an internal server error but the logs don't show errors. I've been trying to resolve the issue, but it's a bit over my head for the time I have. The app runs fine locally.
 
-I wish I could have used socket.io but was not certain I would be able to learn it in one week. I would like to re-do this app using socket.io to make a app that TRULY updates in real time. I think I would also like to deploy to a different web host as i have had some problems with heroku and haven't had enought time to figure them out.
+I wish I could have used socket.io but was not certain I would be able to learn it in one week. I would like to re-do this app using socket.io to make an app that TRULY updates in real time. I think I would also like to deploy to a different web host as i have had some problems with heroku and haven't had enought time to figure them out.
