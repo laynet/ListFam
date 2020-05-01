@@ -4,9 +4,9 @@
     <% include ../static/partials/head.ejs %>
   </head>
   <body>
-    <% include ../static/partials/navbar.ejs %>
+    <% include ../static/partials/messages.ejs %> <% include
+    ../static/partials/navbar.ejs %>
     <main class="container">
-      <% include ../static/partials/messages.ejs %>
       <h1>Sign in</h1>
       <form action="/users/sign_in" method="post">
         <div class="form-group">
@@ -16,7 +16,7 @@
             class="form-control"
             name="email"
             aria-describedby="emailHelp"
-            placeholder="Enter emai"
+            placeholder="Enter email"
           />
           <small class="text-muted" id="emailHelp"
             >email address must be a valid address</small
