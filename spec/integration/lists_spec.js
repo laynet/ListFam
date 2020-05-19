@@ -17,6 +17,7 @@ describe('routes : lists', () => {
       });
     });
   });
+
   describe('GET /lists', () => {
     it('should return a status code 200 and all lists', (done) => {
       request.get(base, (err, res, body) => {
@@ -28,6 +29,7 @@ describe('routes : lists', () => {
       });
     });
   });
+
   describe('GET /lists/new', () => {
     it('should render a new list form', (done) => {
       request.get(`${base}/new`, (err, res, body) => {
@@ -37,6 +39,7 @@ describe('routes : lists', () => {
       });
     });
   });
+
   describe('POST /lists/create', () => {
     const options = {
       url: `${base}/create`,
@@ -59,6 +62,7 @@ describe('routes : lists', () => {
       });
     });
   });
+
   describe('GET /lists/:id', () => {
     it('should render a view with the selected list', (done) => {
       request.get(`${base}/${this.list.id}`, (err, res, body) => {

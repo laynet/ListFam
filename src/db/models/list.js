@@ -1,16 +1,16 @@
-"use strict";
+'use strict';
 module.exports = (sequelize, DataTypes) => {
   var List = sequelize.define(
-    "List",
+    'List',
     {
-      title: DataTypes.STRING
+      title: DataTypes.STRING,
     },
-    {}
+    {},
   );
-  List.associate = function(models) {
+  List.associate = function (models) {
     List.hasMany(models.Item, {
-      foreignKey: "listId",
-      as: "items"
+      foreignKey: 'listId',
+      as: 'items',
     });
   };
   return List;
