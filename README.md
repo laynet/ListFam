@@ -3,11 +3,6 @@
 Problem: An entire househould needs to maintain a grocery list while severa members of the household shop at the same time.
 Solution: A grocery list app that the entire household can use. Every member will be able to sign in and update the communcal grocery list
 
-to clone the repo use npm
-
-```
-$ git clone https://github.com/laynet/ListFam.git
-```
 
 ## Prerequisites
 
@@ -41,6 +36,4 @@ Jasmine - TDD(test driven development) is not complete for the app, but I would 
 
 EJS - If I were to re-build this app I would use React instead of ejs and html forms
 
-The app is deployed in heroku, but there are some issues with postgres and the database has not been deployed successfully, but runs locally. The app was deploying to heroku and loading the static pages before I added users. Now heroku is saying that there is an internal server error but the logs don't show errors. I've been trying to resolve the issue, but it's a bit over my head for the time I have. The app runs fine locally.
 
-I wish I could have used socket.io but was not certain I would be able to learn it in one week. I would like to re-do this app using socket.io to make an app that TRULY updates in real time. I think I would also like to deploy to a different web host as i have had some problems with heroku and haven't had enought time to figure them out.
