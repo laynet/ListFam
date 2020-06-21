@@ -1,6 +1,8 @@
 # ListFam
 
-Problem: An entire househould needs to maintain a grocery list while severa members of the household shop at the same time.  Solution: A grocery list app that the entire household can use. Every member will be able to sign in and update the communal grocery list
+Problem: An entire househould needs to maintain a grocery list while severa members of the household shop at the same time.
+
+Solution: A grocery list app that the entire household can use. Every member will be able to sign in and update the communal grocery list
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
